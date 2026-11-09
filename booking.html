@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Ticket Booking</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .form-container {
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 550px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #1e3c72;
+            margin-bottom: 20px;
+            font-size: 26px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #2a5298;
+        }
+        
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 5px;
+        }
+        
+        .radio-group label {
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: #2a5298;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #1e3c72;
+        }
+        
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #2a5298;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h1>🏏 IPL Ticket Booking</h1>
+
+        <form action="#" method="post" novalidate>
+
+            <!-- Name -->
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required minlength="3" maxlength="50">
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" pattern="[0-9]{10}" required minlength="10" maxlength="10" title="Please enter a valid 10-digit phone number">
+            </div>
+
+            <!-- Match Selection -->
+            <div class="form-group">
+                <label for="match">Select Match:</label>
+                <select id="match" name="match" required>
+                    <option value="">-- Choose a Match --</option>
+                    <option value="mi-csk">Mumbai Indians vs Chennai Super Kings</option>
+                    <option value="rcb-kkr">Royal Challengers Bangalore vs Kolkata Knight Riders</option>
+                    <option value="dc-rr">Delhi Capitals vs Rajasthan Royals</option>
+                    <option value="srh-pbks">Sunrisers Hyderabad vs Punjab Kings</option>
+                    <option value="gt-lsg">Gujarat Titans vs Lucknow Super Giants</option>
+                </select>
+            </div>
+
+            <!-- Stand Category -->
+            <div class="form-group">
+                <label for="stand">Stand Category:</label>
+                <select id="stand" name="stand" required>
+                    <option value="">-- Choose a Stand --</option>
+                    <option value="general">General Stand (₹500)</option>
+                    <option value="premium">Premium Stand (₹1500)</option>
+                    <option value="vip">VIP Stand (₹3000)</option>
+                    <option value="pavilion">Pavilion (₹5000)</option>
+                </select>
+            </div>
+
+            <!-- Number of Tickets -->
+            <div class="form-group">
+                <label for="tickets">Number of Tickets:</label>
+                <input type="number" id="tickets" name="tickets" placeholder="1 - 10" required min="1" max="10" value="1">
+            </div>
+
+            <!-- Radio Buttons: Payment Mode -->
+            <div class="form-group">
+                <label>Payment Mode:</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="payment" value="upi" required> UPI
+                    </label>
+                    <label>
+                        <input type="radio" name="payment" value="card"> Credit/Debit Card
+                    </label>
+                    <label>
+                        <input type="radio" name="payment" value="netbanking"> Net Banking
+                    </label>
+                </div>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn">Book Tickets</button>
+        </form>
+
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </div>
+
+</body>
+
+</html>
